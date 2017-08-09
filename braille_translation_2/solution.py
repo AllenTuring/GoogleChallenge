@@ -1,7 +1,5 @@
-# Generates the braille alphabet dictionary
-def generate_braille_alphabet():
-    # braille alphabet dictionary
-    braille_alphabet = {
+# lowercase braille alphabet
+braille_alphabet = {
         'a':'100000',
         'b':'101000',
         'c':'110000',
@@ -28,18 +26,8 @@ def generate_braille_alphabet():
         'x':'110011',
         'y':'110111',
         'z':'100111',
+        ' ':'000000',
     }
-    # generate capitals
-    letters = braille_alphabet.keys()
-    for letter in letters:
-        braille_alphabet[letter.upper()] = '000001' + braille_alphabet[letter]
-    # add space
-    braille_alphabet[' '] = '000000'
-
-    # output
-    return braille_alphabet
-
-braille_alphabet = generate_braille_alphabet()
 
 def answer(plaintext):
     # TODO stub
