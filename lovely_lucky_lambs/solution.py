@@ -50,17 +50,30 @@ def test_max():
 	assert find_maximum_henchmen(10) == 4
 
 def test_min():
+	# given values
 	assert find_minumum_henchmen(1) == 1
 	assert find_minumum_henchmen(10) == 3
+
 	# simple ranges
+	# calculated by hand + inspection
 	for i in range(2, 6):
 		assert find_minumum_henchmen(i) == 2
 	for i in range(6, 13):
 		assert find_minumum_henchmen(i) == 3
+
 	# derived range test
 	# caution! scales as 2^n
-	n_min, n_max = 0, 1
-	for n in range(1, 13):
+	n_min, n_max = 0, 1 # base init values for range bounds
+	for n in range(1, 15):
+		# we cycle the new range, calculating a new upper bound as
+		# the sum of all terms 1, 2 ... 2^(n-2) for henchmen paid generously
+		# plus the maximum amount of discardable leftover (last two dudes, with math.floor
+		# to prevent partial-lamb payments to imaginary minions below the first one)
 		n_min, n_max = n_max, (2**n - 1) + math.floor(2**(n-1)) + math.floor(2**(n-2))
 		for i in range(n_min, n_max):
+			# check every value in that range, just for goodness.
 			assert find_minumum_henchmen(i) == n
+
+	# problem scope upper bound
+	# found by hand
+	assert find_minumum_henchmen(10**9) == 30
