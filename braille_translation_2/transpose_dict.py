@@ -38,7 +38,7 @@ def dict_repr(dictionary):
 def transpose_dict():
 	new_braille_alphabet = {}
 	for letter in braille_alphabet:
-		new_braille_alphabet[letter] = braille_alphabet[letter][::2] + braille_alphabet[letter][1::2] + braille_alphabet[letter][2::2]
+		new_braille_alphabet[letter] = braille_alphabet[letter][::3] + braille_alphabet[letter][1::3] + braille_alphabet[letter][2::3]
 	dict_repr(new_braille_alphabet)
 
 output = {
