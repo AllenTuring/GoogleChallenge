@@ -17,8 +17,7 @@ def find_minumum_henchmen(total_lambs):
 	# henchmen paid so far is n
 	n = 0
 	# max pay all of the minions you can
-	# ultra-fast equivalent of floor(log2())
-	n = total_lambs.bit_length() - 1
+	n = total_lambs.bit_length() - 1 # ultra-fast equivalent of floor(log2())
 	total_lambs -= 2**n - 1
 
 	# Are there enough left to pay another without breaking the fib rule?
