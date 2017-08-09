@@ -28,7 +28,14 @@ braille_alphabet = {
         'z':'100111',
         ' ':'000000',
     }
+braille_uppercase = '000001'
 
 def answer(plaintext):
-    # TODO stub
-    print(braille_alphabet)
+    # string to hold our braille representation
+    braille_representation = ''
+    for char in plaintext:
+        if char.isupper():
+            braille_representation += braille_uppercase
+        braille_representation += braille_alphabet[char.lower()]
+    # output
+    return braille_representation
