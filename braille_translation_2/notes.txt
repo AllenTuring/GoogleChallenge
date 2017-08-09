@@ -1,0 +1,2 @@
+For this we're going to use the Braille Alphabet. 
+I will use this source: http://braillebug.afb.org/braille_print.asp
