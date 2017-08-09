@@ -1,12 +1,6 @@
-braille_alphabet = generate_braille_alphabet()
-
-def​ ​answer(plaintext):
-    # TODO stub
-​    print(braille_alphabet)
-
 # Generates the braille alphabet dictionary
-generate_braille_alphabet():
-    #​ ​braille alphabet dictionary
+def generate_braille_alphabet():
+    # braille alphabet dictionary
     braille_alphabet = {
         'a':'100000',
         'b':'101000',
@@ -43,3 +37,9 @@ generate_braille_alphabet():
 
     # output
     return braille_alphabet
+
+braille_alphabet = generate_braille_alphabet()
+
+def answer(plaintext):
+    # TODO stub
+    print(braille_alphabet)
