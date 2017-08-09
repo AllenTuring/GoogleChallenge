@@ -1,9 +1,9 @@
-package​ ​com.google.challenges;​ ​
+package com.google.challenges; 
 
-public​ ​class​ ​Answer​ ​{​
-​ ​​ ​​ ​​ ​public​ ​static​ ​String​ ​answer(String​ ​plaintext)​ ​{​ ​
+public class Answer {   
+    public static String answer(String plaintext) { 
 
-​ ​​ ​​ ​​ ​​ ​​ ​​ ​​ ​//​ ​Your​ ​code​ ​goes​ ​here.
+        // Your code goes here.
 
-​ ​​ ​​ ​​ ​}​ ​
+    } 
 }

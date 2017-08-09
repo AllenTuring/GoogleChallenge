@@ -29,7 +29,6 @@ braille_alphabet = {
     ' ':'000000',
 }
 
-
 braille_uppercase = '000001'
 
 def answer(plaintext):
