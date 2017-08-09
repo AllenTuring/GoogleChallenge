@@ -21,3 +21,5 @@ Floor and Log 2 is the fastest way to find this number.
 The stingiest way is going to be fibonacci series payments.
 
 Hmm, will we have weird edge cases where we have to deal with leftovers?
+Quick proof for minimum:
+	For minimum no. If you have enough left over to pay another henchman, that leftover must be greater than the fibonacci minimum and we'd have detected it.
