@@ -16,13 +16,18 @@ Find the difference between the minimum number and maximum number of henchmen.
 Thoughts:
 ------------------------
 Okay, so the most generous way (fewest henchmen) is clearly 2x at each stage, or an exponential.
-Floor and Log 2 is the fastest way to find this number.
+Floor and Log 2 is the fastest way to find this number. We might need some adjustment
 
 The stingiest way is going to be fibonacci series payments.
 
 Hmm, will we have weird edge cases where we have to deal with leftovers?
-Quick proof for minimum:
+Quick proof for minimum payment:
 	For minimum no. If you have enough left over to pay another henchman, that leftover must be greater than the fibonacci minimum and we'd have detected it.
 
 For maximum, is it possible we have an amount to pay out that is greater than pay(n-1) + pay(n-2) but less than 2*pay(n-1)?
-	Yes, however, what am I talking about. This is irrelevant, because this is a maximum figure (minimum henchmen) and any increases would lead to more henchmen and less pay per henchman, which goes into the middle territory which tbh we don't care about.
+	Yes, however, what am I talking about? This is irrelevant, because this is a maximum figure (minimum henchmen) and any increases would lead to more henchmen and less pay per henchman, which goes into the middle territory which tbh we don't care about.
+
+
+Hm, a billion lambs is a big number. Log is going to be fast (especially if we use a bitwise solution in java lol), but is there a fast way to do the Fibonacci sum?
+
+Wait, these are thresholded values. What if we generate a table to begin with and then do sorted lookups?
