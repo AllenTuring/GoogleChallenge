@@ -1,0 +1,23 @@
+Interpretation:
+------------------
+Okay so there are teams of henchmen. They get lambs as payment.
+We are number n. *cue music*
+
+1. The lowest guy on the totem pole gets one lamb.
+2. The rank n+1 on you gets no more than 2x your share.
+3. n-1 and n-2 combined get equal to or less than you at n.
+4. Pay out until you can't add more to the top of the payroll.
+
+Lambs are indivisible, and you might not be able to spend all of them.
+
+Given a number of lambs between 10 and a billion, how many henchmen can you pay?
+Find the difference between the minimum number and maximum number of henchmen.
+
+Thoughts:
+------------------------
+Okay, so the most generous way (fewest henchmen) is clearly 2x at each stage, or an exponential.
+Floor and Log 2 is the fastest way to find this number.
+
+The stingiest way is going to be fibonacci series payments.
+
+Hmm, will we have weird edge cases where we have to deal with leftovers?
