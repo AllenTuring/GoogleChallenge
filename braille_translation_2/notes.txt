@@ -1,2 +1,5 @@
 For this we're going to use the Braille Alphabet. 
 I will use this source: http://braillebug.afb.org/braille_print.asp
+We probably want to initialize and encode it in some way that makes for constant-time access. Anything more would be silly. A Python dict or java HashSet sounds good.
+
+We're going to have a 3-row output. I don't see any specification for newlines.
