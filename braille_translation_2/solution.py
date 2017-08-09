@@ -30,8 +30,9 @@ def generate_braille_alphabet():
         'z':'100111',
     }
     # generate capitals
-    for letter, braille in braille_alphabet:
-        braille_alphabet[letter.upper()] = '000001' + braille
+    letters = braille_alphabet.keys()
+    for letter in letters:
+        braille_alphabet[letter.upper()] = '000001' + braille_alphabet[letter]
     # add space
     braille_alphabet[' '] = '000000'
 
