@@ -4,3 +4,9 @@ We probably want to initialize and encode it in some way that makes for constant
 
 We're going to have a 3-row output. I don't see any specification for newlines.
 Each letter is being read in a 6-digit section by itself, so we don't have to worry about letters being inserted in the middle of the string. So each letter being a 6-digit string makes most sense. Then concatenation I guess.
+
+I don't see any obvious pattern in this alphabet so we'll just hardcode it. It'll be fine, since there's no need to generate it algorithmically and it will never change. It's also a pretty small set.
+
+We should detect capitals and add a capitalization mark before insertion of the letter, I think.
+
+I'll start with Python. I'm also looking at https://www.tutorialspoint.com/python/python_dictionary.htm to make sure I don't screw up with syntax.
