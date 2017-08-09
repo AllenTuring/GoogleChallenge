@@ -23,9 +23,9 @@ def find_minumum_henchmen(total_lambs):
 		n += 1
 
 	# Are there enough left to pay another without breaking the fib rule?
-	# Can be optimized as (2**(n-1)) * 3
-	last2 = 2**n + 2**(n - 1)
-	if total_lambs >= last2:
+	last_1 = 2**(n-1) if n > 0 else 0
+	last_2 = 2**(n-2) if n > 1 else 0
+	if total_lambs >= last_1 + last_2:
 		n += 1
 
 	# Total minions paid.
@@ -51,4 +51,5 @@ def test_max():
 
 def test_min():
 	assert find_minumum_henchmen(1) == 1
+	assert find_minumum_henchmen(2) == 2
 	assert find_minumum_henchmen(10) == 3
