@@ -17,10 +17,8 @@ def find_minumum_henchmen(total_lambs):
 	# henchmen paid so far is n
 	n = 0
 	# max pay all of the minions you can
-	# yes, we can optimize this with log later
-	while total_lambs >= 2**n:
-		total_lambs -= 2**n
-		n += 1
+	n = math.floor(math.log(total_lambs, 2))
+	total_lambs -= 2**n - 1
 
 	# Are there enough left to pay another without breaking the fib rule?
 	last_1 = 2**(n-1) if n > 0 else 0 # how much the last goon was paid
