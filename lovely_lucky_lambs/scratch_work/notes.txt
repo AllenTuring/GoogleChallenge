@@ -23,3 +23,6 @@ The stingiest way is going to be fibonacci series payments.
 Hmm, will we have weird edge cases where we have to deal with leftovers?
 Quick proof for minimum:
 	For minimum no. If you have enough left over to pay another henchman, that leftover must be greater than the fibonacci minimum and we'd have detected it.
+
+For maximum, is it possible we have an amount to pay out that is greater than pay(n-1) + pay(n-2) but less than 2*pay(n-1)?
+	Yes, however, what am I talking about. This is irrelevant, because this is a maximum figure (minimum henchmen) and any increases would lead to more henchmen and less pay per henchman, which goes into the middle territory which tbh we don't care about.
