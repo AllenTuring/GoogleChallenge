@@ -14,3 +14,5 @@ I'll start with Python. I'm also looking at https://www.tutorialspoint.com/pytho
 Actually we can just encode the lowecase letters, then the uppercase letters derived from that as a 12 digit code.
 
 I should have made this a separate branch instead of committing to master lol
+
+Blech. I made everything in the wrong order in the python dict. Hold on, transposing.
