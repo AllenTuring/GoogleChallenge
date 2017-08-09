@@ -3,3 +3,4 @@ I will use this source: http://braillebug.afb.org/braille_print.asp
 We probably want to initialize and encode it in some way that makes for constant-time access. Anything more would be silly. A Python dict or java HashSet sounds good.
 
 We're going to have a 3-row output. I don't see any specification for newlines.
+Each letter is being read in a 6-digit section by itself, so we don't have to worry about letters being inserted in the middle of the string. So each letter being a 6-digit string makes most sense. Then concatenation I guess.
