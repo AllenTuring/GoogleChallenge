@@ -20,6 +20,14 @@ Floor and Log 2 is the fastest way to find this number. We might need some adjus
 
 The stingiest way is going to be fibonacci series payments.
 
+Hmm, will we have weird edge cases where we have to deal with leftovers?
+Quick proof for minimum payment:
+	For minimum no. If you have enough left over to pay another henchman, that leftover must be greater than the fibonacci minimum and we'd have detected it.
+
+For maximum, is it possible we have an amount to pay out that is greater than pay(n-1) + pay(n-2) but less than 2*pay(n-1)?
+	Yes, there will be a term! There is space between these two values. We must account for this.
+	Ignore previous version of this note; I was thinking the wrong orientation.
+
 
 Hm, a billion lambs is a big number. Log is going to be fast (especially if we use a bitwise solution in java lol), but is there a fast way to do the Fibonacci sum?
 

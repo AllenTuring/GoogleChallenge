@@ -5,6 +5,33 @@
 
 import math
 
+
+# The maximum number of lambs we care about
+upper_bound = 10**9
+
+# Generates a table of maximum values for stingy payment
+# Takes advantage of upper bound 10^9
+def generate_max_fib_table():
+	# List of running totals of fibonacci term payment plan minimums
+	# for increasing numbers of minions to pay
+	sums = []
+	running_sum = 0
+
+	# fibonacci term generator
+	last_pay, current_pay = 0, 1
+	while running_sum <= upper_bound:
+		running_sum += current_pay
+		# generate the fib terms and assign them
+		last_pay, current_pay = current_pay, last_pay + current_pay
+		# add it onto the table
+		sums.append(running_sum)
+
+	# output the lookup table
+	return sums
+
+# Saved!
+max_fib_table = generate_max_fib_table()
+
 # Find the maximum number of henchmen you can pay
 # Being stingy as possible (using Fibonacci pattern)
 def find_maximum_henchmen(total_lambs):
@@ -75,3 +102,18 @@ def test_min():
 	# problem scope upper bound
 	# found by hand
 	assert find_minumum_henchmen(10**9) == 30
+
+def test_gen_fib():
+	# check that the first few terms are correct
+	assert max_fib_table[0] == 1
+	assert max_fib_table[1] == 1+1
+	assert max_fib_table[2] == 1+1+2
+	assert max_fib_table[3] == 1+1+2+3
+	# check that the last term is big enough
+	assert max_fib_table[len(max_fib_table)-1] > upper_bound
+	# known generator for the fibonacci series
+	a, b = 0, 1
+	for i in range(1, len(max_fib_table)):
+		a, b = b, a+b
+		# check that each term of the fib is a valid differencing of max_fib_table
+		assert max_fib_table[i] - max_fib_table[i-1] == b
