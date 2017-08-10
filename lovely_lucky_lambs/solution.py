@@ -29,14 +29,25 @@ def generate_max_fib_table():
 	# output the lookup table
 	return sums
 
-# Saved!
+# Saved sum bound table
+# ideal data structure: linked list
 max_fib_table = generate_max_fib_table()
 
 # Find the maximum number of henchmen you can pay
 # Being stingy as possible (using Fibonacci pattern)
 def find_maximum_henchmen(total_lambs):
-	# TODO stub
-	return 0
+	# henchmen paid so far is n
+	n = 0
+	# min pay all of the minions you can
+	while n < len(max_fib_table) and max_fib_table[n] <= total_lambs:
+		n += 1
+
+	# there cannot enough left to pay because we are at minimum
+	# see notes.txt for informal proof outline
+	# no adjustment needed, unlike in max pay mode
+
+	# output
+	return n
 
 # Find the minimum number of henchmen you can pay
 # Being generous as possible (using 2^n pattern)
