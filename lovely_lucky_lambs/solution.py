@@ -76,14 +76,57 @@ def test():
 	test_answer()
 	test_max()
 	test_min()
+	test_gen_fib()
 
 def test_answer():
 	assert answer(1) == 0
 	assert answer(10) == 1
 
+	# simple ranges
+	# calculated by hand + inspection
+	for i in range(2, 4):
+		assert answer(i) == 0
+	for i in range(4, 6):
+		assert answer(i) == 1
+	assert answer(6) == 0
+	for i in range(7, 12):
+		assert answer(i) == 1
+	assert answer(12) == 2
+	for i in range(13, 20):
+		assert answer(i) == 1
+
+	# problem scope upper bound
+	# found by hand
+	assert answer(10**9) == 12
+
 def test_max():
+	# given values
 	assert find_maximum_henchmen(1) == 1
 	assert find_maximum_henchmen(10) == 4
+
+	# simple ranges
+	# calculated by hand + inspection
+	for i in range(2, 4):
+		assert find_maximum_henchmen(i) == 2
+	for i in range(4, 7):
+		assert find_maximum_henchmen(i) == 3
+	for i in range(7, 12):
+		assert find_maximum_henchmen(i) == 4
+	for i in range(12, 20):
+		assert find_maximum_henchmen(i) == 5
+
+	# derived range test
+	# caution! scales as fib(n)
+	a, b, cumulative = 1, 1, 1
+	for n in range(1, 23):
+		lower = cumulative
+		a, b, cumulative = b, a + b, cumulative + b
+		for i in range(lower, cumulative):
+			assert find_maximum_henchmen(i) == n
+
+	# problem scope upper bound
+	# found by hand
+	assert find_maximum_henchmen(10**9) == 42
 
 def test_min():
 	# given values
@@ -96,11 +139,13 @@ def test_min():
 		assert find_minumum_henchmen(i) == 2
 	for i in range(6, 13):
 		assert find_minumum_henchmen(i) == 3
+	for i in range(13, 26):
+		assert find_minumum_henchmen(i) == 4
 
 	# derived range test
 	# caution! scales as 2^n
 	n_min, n_max = 0, 1 # base init values for range bounds
-	for n in range(1, 15):
+	for n in range(1, 18):
 		# we cycle the new range, calculating a new upper bound as
 		# the sum of all terms 1, 2 ... 2^(n-2) for henchmen paid generously
 		# plus the maximum amount of discardable leftover (last two dudes, with math.floor
